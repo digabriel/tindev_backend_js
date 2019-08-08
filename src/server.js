@@ -2,10 +2,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const cors = require("cors");
+require("dotenv").config();
 
 const server = express();
 
-mongoose.connect("mongodb://127.0.0.1:27017/rs_8", {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true
 });
 
